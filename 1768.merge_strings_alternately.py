@@ -14,3 +14,13 @@ class Solution:
             ans.append(word2[ptr2])
             ptr2 += 1
         return "".join(ans)
+
+
+class Solution2:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        from itertools import zip_longest
+
+        ans = []
+        for pair in zip_longest(word1, word2, fillvalue=""):
+            ans.extend(pair)
+        return "".join(ans)
